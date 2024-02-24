@@ -1,0 +1,147 @@
+
+/* MAIN */
+
+main {
+    padding: 50px 0 0 0; 
+}
+
+main .leftSection {
+    margin: 0; 
+    width: 100%;
+    height: 95vh;
+    display: inline-block;
+    position: fixed;
+    overflow: hidden;
+}
+
+main .leftSection video {
+    filter: brightness(1.3) ;
+    height: 95vh;
+    width: auto;
+}
+
+main .rightSection {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000be;
+    position: relative;
+    left: 60%;
+    width:40%;
+    height: 92vh;
+
+    overflow: hidden;
+}
+
+main .heading {
+    height: fit-content;
+    margin-top: 6vh;
+    color: #f3f3f3;
+    user-select: none;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+main form .question {
+    width: 400px;
+    height: 85px;
+}
+
+main form .question a {
+    color: #F46036;
+}
+
+main form label {
+    font-size: 23px;
+    letter-spacing:2px;
+}
+
+main form .question select {
+    font-family: "Roboto Condensed";
+    z-index: 4;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #202020;
+    position: absolute;
+    font-size: 22px;
+    width: 300px;
+    text-align: center;
+    outline: none;
+
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    overflow: -moz-scrollbars-none;
+}
+
+.question select::-ms-expand {
+    display: none; 
+}
+
+option{
+    font-family: "Roboto Condensed";
+    font-size: 22px;
+}
+select option:checked, option:hover {
+    box-shadow: 0 0 10px 100px #292929 inset;
+}
+
+main form #submit {
+    width: 290px;
+    height: 40px;
+
+    background-color: #F46036;
+    border: none;
+    border-radius: 5px;
+
+    text-decoration: none;
+    color: #f3f3f3;
+    font-size: 25px;
+    letter-spacing:2px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    main .heading {
+        user-select: none;
+        font-size: 20px;
+    }
+
+    main form #submit {
+        width: 200px;
+        height: 40px;
+        margin: 60px auto 35px auto; /* Center horizontally and add space above and below */
+        display: block; /* Ensure it's a block element for margin auto to work */
+    }
+
+    main form .question {
+        width: 300px;
+        margin: 40px auto;
+        left: 0;
+    }
+
+    main form {
+        margin: 0;
+        left: 0;
+        margin: 0;
+    }
+
+    main .leftSection {
+        display: none;
+    }
+
+    main .rightSection {
+        left:0;
+        height: fit-content;
+        width: 100%;
+    }
+
+    main .rightSection .heading {
+        font-size: 28px;
+    }
+
+    main form .question select {
+        width: 200px;
+        height: 40px;
+    }
+}

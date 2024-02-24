@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Фит Навигатор</title>
+    <link rel="stylesheet" href="{% static 'homePage/index.css' %}">
+    <script src="{% static 'basicFiles/dropdown.js' %}"></script>
+    <link rel="icon" type="image/x-icon" href="{% static 'basicFiles/favicon.png' %}"> <!-- Ако ico не работи -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    {% block head %}
+    {% endblock head %}
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div id="div">
+                <a href="/home" title="Главна страница">
+                    <img src="{% static 'basicFiles/logo.png' %}" alt="Фит Навигатор" id="logo">
+                    <img src="{% static 'basicFiles/responsiveLogo.png' %}" alt="Фит Навигатор" id="responsiveLogo">
+                </a>
+                <img src="{% static 'basicFiles/dropdown.png' %}" alt=""  id="dropdown"  onclick="dropdown()">
+            </div>
+
+            <a href="/about" class="navButton">За сайта</a>
+        
+            <a href="/bmr" class="navButton">BMR Калкулатор</a>
+
+            <a href="/onlineShop" class="navButton">Онлайн магазин</a>
+ 
+            <a href="/fitNavigator" class="navButton">Създай план</a>
+
+            <a href="/signup" title="Профил"><img src="{% static 'basicFiles/profile.png' %}" alt="Фит Навигатор" id="img2"></a>
+        </nav>
+
+        {% block header %}
+        {% endblock header %}
+    </header>
+
+    <main>
+        {% block main %}
+        {% endblock main %}
+    </main>

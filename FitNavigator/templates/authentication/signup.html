@@ -1,0 +1,50 @@
+{% extends 'base/baseAuthentication.html' %}
+{% load static %}
+
+{% block head %}
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.ico' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'authentication/style.css' %}">
+    <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+    <script type="text/javascript" src="{% static 'authentication/dropdown.js' %}d"></script>
+    <script type="text/javascript" src="{% static 'authentication/script.js' %}"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Регистрация - ФитНавигатор</title>
+
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.ico' %}"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'authentication/favicon.png' %}"> <!-- Ако ico не работи -->
+{% endblock head %}
+
+
+{% block main %}
+    <div class="login-frame">
+            
+        <h2>Регистрация</h2>
+
+        <form  method="post" action="/signup">
+        {% csrf_token %}
+            <!-- Username -->
+            <label for="username">Потребителско име</label>
+            <input type="text" id="username" name="username" Required>
+            <br>
+            <!-- Email -->
+            <label for="email">Имейл</label>
+            <input type="email" id="email" name="email" Required>
+            <br>
+            <!-- Password -->
+            <label for="password">Парола</label Required>
+            <input type="password" id="password" name="password">
+            <div id="showPassword"><input type="checkbox" onclick="showPassword()" >Покажи парола
+            </div>
+
+            <!-- Submit -->
+            <button id="submit">Регистрация</button>
+        </form>
+        <p>Вече имаш акаунт? <a href="/signin">Влизане</a></p>
+    </div>
+{% endblock main %}
+
+
