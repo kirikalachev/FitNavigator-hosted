@@ -1,0 +1,147 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Изберете план - Фит Навигатор</title>
+    <script src="{% static 'Quiz/dropdown.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'Quiz/results.css' %}">
+    <link rel="stylesheet" href="{% static 'basicFiles/basic.css' %}">
+{% endblock head %}
+
+
+{% block main %}
+    <!-- <br>
+    <br>
+    <br>
+    <form method="post" action="{% url 'results' %}"> -->
+        <!-- {% csrf_token %}
+        <button type="submit" name="next_button">Следваща Tренировка</button> -->
+
+    {% if all %}
+        {% with current_workout=all.0 %}
+        <div class="workout">
+            <!-- <p>{{ current_workout.name }}</p>
+            <p>{{ current_workout.Exercise1 }}</p>
+            <p>{{ current_workout.Exercise2 }}</p>
+            <p>{{ current_workout.Exercise3 }}</p>
+            <p>{{ current_workout.Exercise4 }}</p>
+            <p>{{ current_workout.Exercise5 }}</p>
+            <p>{{ current_workout.Exercise6 }}</p>
+            <p>{{ current_workout.Exercise7 }}</p>
+            <p>{{ current_workout.Exercise8 }}</p>
+            <p>{{ current_workout.Exercise9 }}</p>
+            <p>{{ current_workout.Exercise10 }}</p>
+            <p>{{ current_workout.Exercise11 }}</p>
+            <p>{{ current_workout.Exercise12 }}</p>
+            <p>{{ current_workout.Exercise13 }}</p>
+            <p>{{ current_workout.Exercise14 }}</p>
+            <p>{{ current_workout.Exercise15 }}</p> -->
+
+            <div class="tableHeading">Тренировъчна Програма</div>
+            <table>
+                <!-- <tr>
+
+                </tr> -->
+                <tr>
+                  <td>Упражненe 1:</tdh>
+                  <td>{{ current_workout.Exercise1 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражненe 2:</tdh>
+                  <td>{{ current_workout.Exercise2 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражненe 3:</tdh>
+                  <td>{{ current_workout.Exercise3 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражненe 4:</tdh>
+                  <td>{{ current_workout.Exercise4 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражненe 5:</tdh>
+                  <td>{{ current_workout.Exercise5 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражненe6:</tdh>
+                  <td>{{ current_workout.Exercise6 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражненe 7:</tdh>
+                  <td>{{ current_workout.Exercise7 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражнениe 8:</td>
+                  <td>{{ current_workout.Exercise8 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражнениe 9:</tdh>
+                  <td>{{ current_workout.Exercise9 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражнениe 10:</tdh>
+                  <td>{{ current_workout.Exercise10 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражнениe 11:</tdh>
+                  <td>{{ current_workout.Exercise11 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражнениe 12:</tdh>
+                  <td>{{ current_workout.Exercise12 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражнениe 13:</tdh>
+                  <td>{{ current_workout.Exercise13 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражнениe 14:</tdh>
+                  <td>{{ current_workout.Exercise14 }}</td>
+                </tr>
+                <tr>
+                  <td>Упражнениe 15:</tdh>
+                  <td>{{ current_workout.Exercise15 }}</tdh>
+                </tr>
+              </table>
+              
+        </div>
+        {% endwith %}
+        {% endif %}
+
+        {% if all|length > 1 %}
+        <input type="hidden" name="current_index" value="0">
+        {% endif %}
+        <br>
+
+        {% for item in tips %}
+
+        <div  class="tableHeading">Съвети за диета</div>
+        <table>
+            <tr>
+              <td>Съвет 1:</td>
+              <td>{{ item.Tip1 }}</td>
+            </tr>
+            <tr>
+              <td>Съвет 2:</td>
+              <td>{{ item.Tip2 }}</td>
+            </tr>
+            <tr>
+              <td>Съвет 3:</td>
+              <td>{{ item.Tip3 }}</td>
+            </tr>
+            <tr>
+              <td>Съвет 4:</td>
+              <td>{{ item.Tip4 }}</td>
+            </tr>
+            <tr>
+              <td>Закючение:</td>
+              <td>{{ item.Tip5 }}</td>
+            </tr>
+          </table>
+          
+        {% endfor %}
+{% endblock main %}
+
+
