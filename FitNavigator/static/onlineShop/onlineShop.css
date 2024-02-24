@@ -1,0 +1,10 @@
+.parentDiv {
+    display: flex;
+    height: 100vh; /* Make the body take the full height of the viewport */
+    justify-content: center; /* Center the child horizontally */
+    align-items: center; /* Center the child vertically */
+}
+
+body div {
+    user-select: none;
+}
